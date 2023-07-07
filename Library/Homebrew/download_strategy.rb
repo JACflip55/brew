@@ -288,7 +288,7 @@ class AbstractFileDownloadStrategy < AbstractDownloadStrategy
     return @symlink_location if defined?(@symlink_location)
 
     ext = Pathname(parse_basename(url)).extname
-    @symlink_location = @cache/"#{name}--#{version}#{ext}"
+    @symlink_location = "#{@cache}/#{name}--#{version}#{ext}"
   end
 
   # Path for storing the completed download.
